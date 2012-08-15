@@ -321,7 +321,7 @@ public class DownloadsMojo extends GitHubProjectMojo {
 					repository.generateId()));
 
 		for (File file : files) {
-			String name = file.getAbsolutePath().substring(project.getBuild().getDirectory().getAbsolutePath().length());
+			String name = file.getAbsolutePath().substring(project.getBuild().getDirectory().length());
 			if (!StringUtils.isEmpty(suffix)) {
 				final int lastDot = name.lastIndexOf('.');
 				if (lastDot != -1)
